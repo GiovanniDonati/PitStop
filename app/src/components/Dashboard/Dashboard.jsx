@@ -10,15 +10,15 @@ function Dashboard() {
 
         <div className="grid grid-cols-3 gap-4 mb-8">
           <div className="bg-white p-6 rounded-lg shadow grow">
-            <h3 className="text-gray-500">Veículos no Pátio</h3>
+            <h3 className="text-gray-500">Veículos Aguardando</h3>
             <p className="text-2xl font-bold">18</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow grow">
-            <h3 className="text-gray-500">Manutenções</h3>
+            <h3 className="text-gray-500">Em Manutenções</h3>
             <p className="text-2xl font-bold">7</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow grow">
-            <h3 className="text-gray-500">Finalizadas Hoje</h3>
+            <h3 className="text-gray-500">Finalizados Hoje</h3>
             <p className="text-2xl font-bold">5</p>
           </div>
         </div>
