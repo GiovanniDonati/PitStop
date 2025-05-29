@@ -44,7 +44,7 @@ function Stock() {
 
   return (
     <div className="h-screen p-8 bg-gray-100 grow">
-      <h2 className="text-3xl font-bold mb-6">Produtos</h2>
+      <h2 className="text-3xl font-bold mb-6">Estoque</h2>
 
       <div className="grid grid-cols-2 gap-4 overflow-y-scroll h-[calc(100vh-150px)]">
         {produtos.map((produto) => (
