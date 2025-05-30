@@ -1,7 +1,44 @@
 import { Trash2 } from "lucide-react";
 import { useState } from "react";
 
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+
 function Orcamento() {
+  const gerarPDF = () => {
+    const doc = new jsPDF();
+
+    doc.setFontSize(18);
+    doc.text("Orçamento de Manutenção", 14, 20);
+
+    doc.setFontSize(12);
+    doc.text(`Cliente: ${veiculo.cliente}`, 14, 30);
+    doc.text(`Veículo: ${veiculo.modelo} - ${veiculo.ano}`, 14, 38);
+    doc.text(`Placa: ${veiculo.placa}`, 14, 46);
+
+    autoTable(doc, {
+      startY: 55,
+      head: [["Peça", "Qtd", "Valor Unitário", "Mão de Obra", "Subtotal"]],
+      body: pecas.map((p) => [
+        p.nome,
+        p.quantidade,
+        `R$ ${p.valor.toFixed(2)}`,
+        `R$ ${p.maoDeObra.toFixed(2)}`,
+        `R$ ${(p.quantidade * p.valor + p.maoDeObra).toFixed(2)}`,
+      ]),
+    });
+
+    const y = doc.lastAutoTable.finalY + 10;
+
+    doc.setFontSize(12);
+    doc.text(`Total Peças: R$ ${totalPecas.toFixed(2)}`, 14, y);
+    doc.text(`Total Mão de Obra: R$ ${totalMaoDeObra.toFixed(2)}`, 14, y + 8);
+    doc.setFontSize(14);
+    doc.text(`Total Geral: R$ ${totalGeral.toFixed(2)}`, 14, y + 20);
+
+    doc.save(`orcamento-${veiculo.placa || "veiculo"}.pdf`);
+  };
+
   const [veiculo, setVeiculo] = useState({
     placa: "",
     modelo: "",
@@ -162,7 +199,7 @@ function Orcamento() {
 
         <button
           className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded shadow"
-          onClick={() => alert("Função PDF será implementada")}
+          onClick={gerarPDF}
         >
           Gerar PDF
         </button>
