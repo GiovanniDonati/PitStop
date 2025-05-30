@@ -16,7 +16,7 @@ function SideBar() {
     <div
       onMouseEnter={() => setSideBarActive(true)}
       onMouseLeave={() => setSideBarActive(false)}
-      className={`bg-white flex flex-col items-center p-4 transition-all duration-700 ${
+      className={`bg-white flex flex-col items-center p-4 transition-all duration-300 ${
         sideBarActive ? "w-48" : "w-20"
       } transition-all`}
     >
