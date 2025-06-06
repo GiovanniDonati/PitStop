@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SideBar from "./components/SideBar/SideBar";
 import Dashboard from "./pages/Dashboard";
-// import Agendamento from "./pages/Agendamento";
+import AppointmentCalendar from "./pages/AppointmentCalendar";
 import Orcamento from "./pages/Orcamento";
 import Financeiro from "./pages/Financeiro";
 import Stock from "./pages/Stock";
@@ -14,7 +14,7 @@ function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            {/* <Route path="/agendamento" element={<Agendamento />} /> */}
+            <Route path="/agendamento" element={<AppointmentCalendar />} />
             <Route path="/orcamento" element={<Orcamento />} />
             <Route path="/stock" element={<Stock />} />
             <Route path="/financeiro" element={<Financeiro />} />
