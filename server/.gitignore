@@ -1,0 +1,67 @@
+# Ignorar arquivos de cache e diretórios de build
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ignorar ambientes virtuais
+.venv/
+venv/
+env/
+/venv/
+/env/
+
+# Ignorar arquivos gerados pelo interpretador Python (logs, etc.)
+*.log
+*.sqlite3
+*.db
+
+# Ignorar arquivos específicos do sistema operacional
+.DS_Store # macOS
+.Trashes # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+Desktop.ini # Windows
+
+# Ignorar arquivos de IDEs populares
+.idea/ # PyCharm
+.vscode/ # VS Code
+*.iml # IntelliJ IDEA (usado por PyCharm)
+.project
+.classpath
+.settings/
+
+# Ignorar arquivos de dados ou de configuração sensíveis (se existirem)
+# Adicione arquivos como:
+# my_secrets.ini
+# config.json
+# .env # Arquivos de variáveis de ambiente
+# .flaskenv
+# instance/
+
+# Ignorar arquivos temporários e de backup
+*~
+*.bak
+*.swp
+.fuse_hidden*
+
+# Ignorar arquivos de documentação Sphinx
+# docs/_build/
+
+# Ignorar arquivos de notebooks Jupyter
+.ipynb_checkpoints/
